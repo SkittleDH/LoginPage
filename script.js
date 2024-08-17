@@ -3,8 +3,12 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     
     const username = document.getElementById('username').value;
 
-    // Simulate checking the username
-    if (username !== 'TicTacToe') {
+    // Check if the username is correct
+    if (username === 'TicTacToe') {
+        // Redirect to the TicTacToe game URL
+        window.location.href = 'https://htmlpreview.github.io/?https://github.com/SkittleDH/TicTacToe/blob/main/index.html';
+    } else {
+        // Show the error popup if the username is incorrect
         document.getElementById('errorPopup').style.display = 'block';
     }
 });

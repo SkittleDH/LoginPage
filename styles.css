@@ -1,101 +1,129 @@
-/* General Styles */
+/* General Body Styling */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #00a4e4;
+    background-color: #00a2e8;
     font-family: 'Comic Sans MS', cursive, sans-serif;
-}
-
-.container {
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-/* Login Box */
-.login-box {
-    background-color: #d3e9fc;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+/* Login Container Styling */
+.login-container {
+    background-color: #b3d9ff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px;
     text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-.login-box h2 {
-    margin-bottom: 20px;
-}
-
-.login-box input {
-    width: 250px;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
-
-.login-box button {
-    background-color: #b2e033;
+h1 {
+    font-size: 2.5em;
     color: black;
+    margin-bottom: 20px;
+    animation: bounceIn 1s ease;
+}
+
+/* Input Styling */
+input {
+    font-size: 1.5em;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 15px;
     border: none;
-    padding: 10px 20px;
-    margin-top: 15px;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
     outline: none;
+    background-color: #ffffff;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: typing 0.5s steps(30, end) 1;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
-.login-box button:hover {
-    background-color: #9ccc29;
+input::placeholder {
+    color: #888;
 }
 
-/* Error Popup Styles */
-.error-popup {
+input:hover, input:focus {
+    transform: scale(1.1);
+    background-color: #e0f7ff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styling */
+button {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    background-color: #bfe554;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #a3c442;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Error Popup Styling */
+.error-container {
+    display: none;
+    background-color: #ffcccc;
+    border: 2px solid red;
+    border-radius: 15px;
+    padding: 20px;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #f5c2c2;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-    width: 400px;
-    text-align: center;
-    z-index: 1000;
-    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-.popup-content h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+.error-container h2 {
+    margin: 0;
+    font-size: 2em;
+    color: red;
 }
 
-.popup-content p {
-    font-size: 18px;
-    margin-bottom: 20px;
+.error-container p {
+    font-size: 1.2em;
 }
 
-.popup-content a {
-    color: blue;
-    text-decoration: underline;
-}
-
-.popup-content button {
-    font-size: 18px;
-    padding: 10px 20px;
+.error-container button {
+    font-size: 1.2em;
+    padding: 10px 15px;
+    background-color: #bfe554;
     border-radius: 10px;
-    border: none;
-    outline: none;
-    background-color: #ff8c8c;
-    color: black;
     cursor: pointer;
 }
 
-.popup-content button:hover {
-    background-color: #ff6666;
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.hidden {
-    display: none;
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

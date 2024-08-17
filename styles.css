@@ -39,19 +39,30 @@ input {
     width: 300px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    animation: typing 0.5s steps(30, end) 1;
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     font-family: 'Comic Sans MS', cursive, sans-serif;
+    letter-spacing: 0.05em;
+    animation: typingFade 0.1s ease-in-out forwards;
 }
 
-input::placeholder {
-    color: #888;
+/* Smooth pop-out animation for each typed letter */
+input:focus::placeholder {
+    color: #e0e0e0;
 }
 
-input:hover, input:focus {
-    transform: scale(1.1);
-    background-color: #e0f7ff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+input:focus {
+    animation: letterPop 0.3s forwards;
+}
+
+@keyframes letterPop {
+    0% {
+        letter-spacing: 0.05em;
+        transform: scale(1);
+    }
+    100% {
+        letter-spacing: 0.2em;
+        transform: scale(1.05);
+    }
 }
 
 /* Button Styling */
@@ -84,9 +95,15 @@ button:hover {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.5s ease-in-out;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.error-container.visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .error-container h2 {
@@ -125,5 +142,14 @@ button:hover {
     }
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes typingFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

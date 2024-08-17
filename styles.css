@@ -1,87 +1,56 @@
-body {
-    background-color: #00a2e8;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+/* Existing styles... */
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
 }
 
-.login-container {
+.modal-content {
     background-color: #b3d9ff;
+    margin: 15% auto; 
     padding: 20px;
+    border: 1px solid #888;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 350px;
+    width: 80%;
+    max-width: 400px;
     text-align: center;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-h1 {
-    font-size: 2.5em;
-    color: black;
-    margin-bottom: 20px;
-    animation: bounceIn 1s ease;
-}
-
-input {
-    font-size: 1.5em;
-    padding: 10px;
-    margin: 20px 0;
-    border-radius: 15px;
-    border: none;
-    outline: none;
-    background-color: #ffffff;
-    width: 300px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    animation: typing 0.5s steps(30, end) 1;
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
-input::placeholder {
-    color: #888;
+.modal-title {
+    font-size: 2em;
+    color: red;
+    margin-bottom: 15px;
 }
 
-input:hover, input:focus {
-    transform: scale(1.1);
-    background-color: #e0f7ff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-button {
-    font-size: 1.5em;
-    padding: 10px 20px;
-    border-radius: 15px;
-    border: none;
-    outline: none;
-    background-color: #bfe554;
+a:hover {
+    text-decoration: underline;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
     color: black;
+    text-decoration: none;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    animation: slideIn 1s ease;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
-
-button:hover {
-    transform: scale(1.1);
-    background-color: #a6cc4a;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Animations */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 300px; }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes bounceIn {
-    0% { transform: 

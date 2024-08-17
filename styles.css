@@ -1,101 +1,79 @@
+/* General Styles */
 body {
-    background-color: #00a2e8;
+    margin: 0;
+    padding: 0;
+    background-color: #00a4e4;
     font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.container {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
 }
 
-.login-container {
-    background-color: #b3d9ff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 350px;
+/* Login Box */
+.login-box {
+    background-color: #d3e9fc;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     text-align: center;
-    animation: fadeIn 1.5s ease-in-out;
 }
 
-h1 {
-    font-size: 2.5em;
-    color: black;
+.login-box h2 {
     margin-bottom: 20px;
-    animation: bounceIn 1s ease;
 }
 
-input {
-    font-size: 1.5em;
+.login-box input {
+    width: 250px;
     padding: 10px;
-    margin: 20px 0;
-    border-radius: 15px;
-    border: none;
-    outline: none;
-    background-color: #ffffff;
-    width: 300px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    animation: typing 0.5s steps(30, end) 1;
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
 }
 
-input::placeholder {
-    color: #888;
-}
-
-input:hover, input:focus {
-    transform: scale(1.1);
-    background-color: #e0f7ff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-button {
-    font-size: 1.5em;
-    padding: 10px 20px;
-    border-radius: 15px;
-    border: none;
-    outline: none;
-    background-color: #bfe554;
+.login-box button {
+    background-color: #b2e033;
     color: black;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+    font-size: 16px;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    animation: slideIn 1s ease;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    outline: none;
 }
 
-button:hover {
-    transform: scale(1.1);
-    background-color: #a6cc4a;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+.login-box button:hover {
+    background-color: #9ccc29;
 }
 
-/* Popup Styles */
+/* Error Popup Styles */
 .error-popup {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #ffc1c1;
-    border-radius: 15px;
+    background-color: #f5c2c2;
+    border-radius: 20px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 350px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    width: 400px;
     text-align: center;
-    z-index: 999;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    z-index: 1000;
+    display: none;
 }
 
 .popup-content h2 {
-    font-size: 2em;
-    margin-bottom: 15px;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
 .popup-content p {
-    font-size: 1.2em;
-    margin-bottom: 15px;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .popup-content a {
@@ -104,7 +82,7 @@ button:hover {
 }
 
 .popup-content button {
-    font-size: 1.2em;
+    font-size: 18px;
     padding: 10px 20px;
     border-radius: 10px;
     border: none;
@@ -120,31 +98,4 @@ button:hover {
 
 .hidden {
     display: none;
-}
-
-/* Animations */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 300px; }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes bounceIn {
-    0% { transform: scale(0.5); opacity: 0; }
-    80% { transform: scale(1.2); opacity: 1; }
-    100% { transform: scale(1); }
-}
-
-@keyframes slideIn {
-    from { transform: translateY(100px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-/* Popup Animation */
-.error-popup {
-    animation: fadeIn 0.5s ease-in-out;
 }

@@ -7,11 +7,19 @@ document.getElementById('submitBtn').addEventListener('click', function() {
         window.location.href = "https://htmlpreview.github.io/?https://github.com/SkittleDH/TicTacToe/blob/main/index.html";
     } else {
         // Show error popup if the input is incorrect
-        document.getElementById('error-popup').style.display = 'block';
+        const errorPopup = document.getElementById('error-popup');
+        errorPopup.style.display = 'block';
+        setTimeout(() => {
+            errorPopup.classList.add('visible');
+        }, 50);  // Slight delay to trigger the transition smoothly
     }
 });
 
 // Close error popup on clicking the close button
 document.getElementById('closeBtn').addEventListener('click', function() {
-    document.getElementById('error-popup').style.display = 'none';
+    const errorPopup = document.getElementById('error-popup');
+    errorPopup.classList.remove('visible');
+    setTimeout(() => {
+        errorPopup.style.display = 'none';
+    }, 500);  // Allow time for transition to complete before hiding
 });

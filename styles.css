@@ -72,6 +72,56 @@ button:hover {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Popup Styles */
+.error-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffc1c1;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    z-index: 999;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.popup-content h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.popup-content p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.popup-content a {
+    color: blue;
+    text-decoration: underline;
+}
+
+.popup-content button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #ff8c8c;
+    color: black;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #ff6666;
+}
+
+.hidden {
+    display: none;
+}
+
 /* Animations */
 @keyframes typing {
     from { width: 0; }
@@ -94,12 +144,7 @@ button:hover {
     to { transform: translateY(0); opacity: 1; }
 }
 
-/* Smooth Text Pop-Up Animation */
-.animated-input {
-    animation: textPopUp 0.3s ease-in-out;
-}
-
-@keyframes textPopUp {
-    0% { transform: scale(0.5); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+/* Popup Animation */
+.error-popup {
+    animation: fadeIn 0.5s ease-in-out;
 }

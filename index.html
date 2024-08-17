@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="login-container">
-        <h1>Login</h1>
-        <input type="text" id="username" placeholder="Type Name" class="animated-input">
-        <button onclick="checkLogin()">Submit</button>
+    <div class="container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Type Name">
+                <button type="submit" id="submit-btn">Submit</button>
+            </form>
+        </div>
     </div>
 
     <!-- Error Popup -->
-    <div id="error-popup" class="error-popup hidden">
+    <div id="errorPopup" class="error-popup hidden">
         <div class="popup-content">
             <h2>Error</h2>
-            <p>Invalid code. Try the <a href="https://pastebin.com/">Pastebin link</a> instead.</p>
-            <button onclick="closePopup()">Close</button>
+            <p>Invalid code. Try the <a href="https://pastebin.com">Pastebin link</a> instead.</p>
+            <button id="close-btn">Close</button>
         </div>
     </div>
 

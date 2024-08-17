@@ -1,18 +1,17 @@
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
+// Redirect to TicTacToe page when correct input is entered
+document.getElementById('submitBtn').addEventListener('click', function() {
     const username = document.getElementById('username').value;
 
-    // Check if the username is correct
-    if (username === 'TicTacToe') {
-        // Redirect to the TicTacToe game URL
-        window.location.href = 'https://htmlpreview.github.io/?https://github.com/SkittleDH/TicTacToe/blob/main/index.html';
+    // Check if the entered username is "TicTacToe"
+    if (username === "TicTacToe") {
+        window.location.href = "https://htmlpreview.github.io/?https://github.com/SkittleDH/TicTacToe/blob/main/index.html";
     } else {
-        // Show the error popup if the username is incorrect
-        document.getElementById('errorPopup').style.display = 'block';
+        // Show error popup if the input is incorrect
+        document.getElementById('error-popup').style.display = 'block';
     }
 });
 
-document.getElementById('close-btn').addEventListener('click', function() {
-    document.getElementById('errorPopup').style.display = 'none';
+// Close error popup on clicking the close button
+document.getElementById('closeBtn').addEventListener('click', function() {
+    document.getElementById('error-popup').style.display = 'none';
 });

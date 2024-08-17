@@ -1,13 +1,14 @@
-function checkLogin() {
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
     const username = document.getElementById('username').value;
 
-    if (username === "TicTacToe") {
-        window.location.href = "https://htmlpreview.github.io/?https://github.com/SkittleDH/TicTacToe/blob/main/index.html";
-    } else {
-        document.getElementById('error-popup').classList.remove('hidden');
+    // Simulate checking the username
+    if (username !== 'TicTacToe') {
+        document.getElementById('errorPopup').style.display = 'block';
     }
-}
+});
 
-function closePopup() {
-    document.getElementById('error-popup').classList.add('hidden');
-}
+document.getElementById('close-btn').addEventListener('click', function() {
+    document.getElementById('errorPopup').style.display = 'none';
+});

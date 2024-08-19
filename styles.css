@@ -45,7 +45,6 @@ input {
     animation: typingFade 0.1s ease-in-out forwards;
 }
 
-/* Smooth pop-out animation for each typed letter */
 input:focus::placeholder {
     color: #e0e0e0;
 }

@@ -4,9 +4,13 @@ document.getElementById('submitBtn').addEventListener('click', function() {
 
     if (username === "TicTacToe") {
         window.location.href = "https://htmlpreview.github.io/?https://github.com/SkittleDH/TicTacToe/blob/main/index.html";
-    } else if (username === "Proxy") {
-        window.location.href = "https://funnyloginpage.yaha.pro/";
-    } else {
+    }
+
+    if (username === "Browser") {
+        window.location.href = "https://funnyloginpage.yaha.pro";
+    }
+
+    if (username !== "TicTacToe" && username !== "Browser") {
         // Show error popup if the input is incorrect
         const errorPopup = document.getElementById('error-popup');
         errorPopup.style.display = 'block';
